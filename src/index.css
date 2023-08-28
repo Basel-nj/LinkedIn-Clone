@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+   overflow-y: scroll;
+   overflow-x: hidden;
+   font-family: Arial, sans-serif;
+}
+:root,
+body,
+html {
+   background-color: #f5f5f5a2;
+   box-sizing: border-box;
+}
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+img,
+label,
+li,
+nav,
+small,
+p,
+span,
+ul {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: none;
+   font-size: 100%;
+   background: transparent;
+}
+
+.active span:after {
+   content: "";
+   transform: scaleX(1);
+   border-bottom: 2px solid var(--white, #fff);
+   bottom: 0;
+   left: 0;
+   position: absolute;
+   transition: transform 0.2s ease-in-out;
+   width: 100%;
+   border-color: rgba(0, 0, 0, 0.9);
+}
+.active:hover a span {
+   color: rgba(0, 0, 0, 0.9);
+}
+
+.navbarAnchor {
+   align-items: center;
+   background: transparent;
+   display: flex;
+   flex-direction: column;
+   font-size: 12px;
+   font-weight: 400;
+   justify-content: center;
+   line-height: 1.5;
+   min-height: 52px;
+   min-width: 80px;
+   position: relative;
+   text-decoration: none;
+}
+
+.navbarAnchor span {
+   color: rgba(0, 0, 0, 0.6);
+   display: flex;
+   align-items: center;
+}
+.navbarAnchor:hover span {
+   color: rgba(0, 0, 0, 0.9);
+}
+
+.specialGrid {
+   display: grid;
+   grid-template-areas: "leftside main rightside";
+   grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
+   column-gap: 25px;
+   row-gap: 25px;
+}
+@media (max-width: 768px) {
+   .specialGrid {
+      display: flex;
+      flex-direction: column;
+      padding: 0 5px;
+   }
+}
+
+@media (max-width: 768px) {
+   .navbarAnchor {
+      min-width: 70px;
+   }
+}
+
+/* ---------------------------------------------------- */
+/* Rightside component  */
+
+.feedList {
+   display: flex;
+   align-items: center;
+   margin: 12px 0;
+   position: relative;
+   font-size: 14px;
+}
+
+.feedList a div {
+   background-image: url("https://static-exp1.licdn.com/sc/h/1b4vl1r54ijmrmcyxzoidwmxs");
+   background-size: contain;
+   background-position: center;
+   background-repeat: no-repeat;
+   width: 48px;
+   height: 48px;
+   margin-right: 8px;
+}
+
+.feedList div {
+   display: flex;
+   flex-direction: column;
+}
+
+.feedList div button {
+   background-color: transparent;
+   color: rgba(0, 0, 0, 0.6);
+   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6);
+   padding: 16px;
+   align-items: center;
+   border-radius: 15px;
+   box-sizing: border-box;
+   font-weight: 600;
+   display: inline-flex;
+   justify-content: center;
+   max-height: 32px;
+   max-width: 480px;
+   text-align: center;
+   outline: none;
+}
+
+.artCard {
+   text-align: center;
+   overflow: hidden;
+   margin-bottom: 8px;
+   background-color: #fff;
+   border-radius: 5px;
+   transition: box-shadow 83ms;
+   position: relative;
+   border: none;
+   box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 0 rgb(0 0 0 / 20%);
+}
+
+.commonCard {
+   text-align: center;
+   overflow: hidden;
+   margin-bottom: 8px;
+   background-color: #fff;
+   border-radius: 5px;
+   position: relative;
+   box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 1px rgb(0 0 0 / 20%);
+}
+
+.shareBoxButton {
+   outline: none;
+   color: rgba(0, 0, 0.6);
+   font-size: 14px;
+   line-height: 1.5;
+   min-height: 48px;
+   background: transparent;
+   border: none;
+   display: flex;
+   align-items: center;
+   font-weight: 500;
+   cursor: pointer;
+   transition: background 0.3s ease;
+   border-radius: 5px;
+}
+.shareBoxButton:hover {
+   background: rgba(0, 0, 0, 0.08);
+}
+
+.socialActionsButton {
+   display: inline-flex;
+   align-items: center;
+   flex-direction: row;
+   padding: 8px;
+   color: rgba(0, 0, 0, 0.6);
+   border: none;
+   background-color: white;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: background 0.3s;
+   width: calc(100% / 4);
+   height: 60px;
+   justify-content: center;
+}
+
+.socialActionsButton:hover {
+   background: rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+   .socialActionsButton span {
+      margin-left: 8px;
+      margin-top: 3px;
+      font-weight: 600;
+   }
+}
+
+/* ----------------------------------------------- */
+/* post modal  */
+
+.overflow-initial {
+   overflow: initial;
+}
+
+.contentButton {
+   border: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: background 0.3s ease;
+   margin-bottom: 10px;
+}
+
+.assetButton {
+   height: 40px;
+   min-width: auto;
+   color: rgba(0, 0, 0, 0.6);
+   font-weight: 500;
+   font-size: 14px;
+   background: none;
+   cursor: pointer;
+}
+
+.assetButton:hover {
+   background-color: rgba(0, 0, 0, 0.08);
+}
